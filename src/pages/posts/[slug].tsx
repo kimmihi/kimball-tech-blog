@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { getPostBySlug, getAllPostPaths } from "../../lib";
-
+import Container from "components/Container";
 interface Props {
   post: {
     frontMatter: PostMetaType;
@@ -9,11 +9,10 @@ interface Props {
 }
 
 const PostBySlug: NextPage<Props> = ({ post }) => {
-  console.log(post);
   return (
-    <>
+    <Container>
       <h1>{post.slug}</h1>
-    </>
+    </Container>
   );
 };
 
