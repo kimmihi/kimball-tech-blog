@@ -1,11 +1,8 @@
 import type { NextPage } from "next";
 import { getPostBySlug, getAllPostPaths } from "../../lib";
-import Container from "components/Container";
+import Container from "components/Layout/Container";
 interface Props {
-  post: {
-    frontMatter: PostMetaType;
-    slug: string;
-  };
+  post: PostType;
 }
 
 const PostBySlug: NextPage<Props> = ({ post }) => {
@@ -24,11 +21,11 @@ export const getStaticProps = async ({ params }: PostParams) => {
   };
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   return {
     paths: getAllPostPaths(),
     fallback: false,
   };
-}
+};
 
 export default PostBySlug;

@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import React from "react";
 import Box from "@mui/material/Box";
 
-import { TOP_BAR_HEIGHT } from "config";
+import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "config";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -13,7 +14,7 @@ const Container: NextPage<Props> = ({ children }) => {
       sx={{
         border: "1px solid black",
         marginTop: `${TOP_BAR_HEIGHT}px`,
-        marginX: "8rem",
+        marginLeft: `${NAV_BAR_WIDTH}px`,
       }}
     >
       {children}

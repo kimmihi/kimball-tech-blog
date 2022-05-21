@@ -6,6 +6,11 @@ interface PostMetaType {
   title: string;
 }
 
+interface PostType {
+  frontMatter: PostMetaType;
+  slug: string;
+}
+
 interface PostParams {
   params: {
     slug: string;
