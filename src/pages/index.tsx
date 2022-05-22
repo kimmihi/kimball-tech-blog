@@ -1,5 +1,8 @@
 import type { NextPage } from "next";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import Container from "components/Layout/Container";
+import PostCard from "components/Post/PostCard";
 import { getAllPosts } from "lib";
 
 interface Props {
@@ -9,9 +12,15 @@ interface Props {
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <Container>
-      {posts.map((post) => {
-        return <h1 key={post.slug}>{post.frontMatter.title}</h1>;
-      })}
+      <Grid container spacing={2}>
+        {posts.map((post) => {
+          return (
+            <Grid item xs={6} key={post.slug}>
+              <PostCard post={post} />
+            </Grid>
+          );
+        })}
+      </Grid>
     </Container>
   );
 };

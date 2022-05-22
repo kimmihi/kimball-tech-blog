@@ -23,7 +23,7 @@ const Header: NextPage = () => {
       <Typography
         variant="h5"
         sx={{
-          color: "#e6e6e6",
+          color: "#ff6600",
         }}
       >
         {"Kimball's Tech Blog"}

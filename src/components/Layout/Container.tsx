@@ -12,7 +12,6 @@ const Container: NextPage<Props> = ({ children }) => {
     <Box
       id="container"
       sx={{
-        border: "1px solid black",
         marginTop: `${TOP_BAR_HEIGHT}px`,
         marginLeft: `${NAV_BAR_WIDTH}px`,
       }}
