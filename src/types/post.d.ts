@@ -8,6 +8,7 @@ interface PostMetaType {
 
 interface PostType {
   frontMatter: PostMetaType;
+  content: MDXRemoteSerializeResult;
   slug: string;
 }
 

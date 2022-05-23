@@ -1,7 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
+import { serialize } from "next-mdx-remote/serialize";
+import rehypeSlug from "rehype-slug";
+import remarkToc from "remark-toc";
 const POST_PATH = "src/public/posts";
 
 export const getAllPosts = () => {
@@ -12,11 +14,20 @@ export const getAllPosts = () => {
       path.join(POST_PATH, filename),
       "utf-8"
     );
-    const { data: frontMatter } = matter(markdownWithMeta);
-
+    const { content, data: frontMatter } = matter(markdownWithMeta);
+    const mdxSource = serialize(content, {
+      mdxOptions: {
+        // @ts-ignore: Unreachable code error
+        remarkPlugins: [[remarkToc, {}]],
+        // @ts-ignore: Unreachable code error
+        rehypePlugins: [[rehypeSlug, {}]],
+      },
+    });
     return {
       frontMatter,
+      content,
       slug: filename.split(".")[0],
+      mdxSource: mdxSource,
     };
   });
 
