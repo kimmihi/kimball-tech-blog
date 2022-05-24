@@ -13,6 +13,7 @@ interface Props {
 }
 
 const PostCard: NextPage<Props> = ({ post }) => {
+  console.log(post);
   return (
     <Card
       sx={{
@@ -23,7 +24,6 @@ const PostCard: NextPage<Props> = ({ post }) => {
     >
       <CardContent>
         <Typography>{post.frontMatter.title}</Typography>
-        <MDXRemote {...post.content} />
       </CardContent>
     </Card>
   );

@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       }}
     >
       <Grid container spacing={2}>
-        {posts.map((post) => {
+        {posts?.map((post) => {
           return (
             <Grid item xs={4} key={post.slug}>
               <PostCard post={post} />

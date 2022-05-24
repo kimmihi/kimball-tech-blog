@@ -4,14 +4,19 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import remarkToc from "remark-toc";
+
 const POST_PATH = "src/public/posts";
 
-export const getAllPosts = async () => {
+export const getAllPosts = () => {
   const files = fs.readdirSync(path.join(POST_PATH));
 
   const posts = files.map((filename) => {
-    const markdownWithMeta = fs.readFileSync(path.join(POST_PATH, filename));
+    const markdownWithMeta = fs.readFileSync(
+      path.join(POST_PATH, filename),
+      "utf-8"
+    );
     const { data: frontMatter } = matter(markdownWithMeta);
+
     return {
       frontMatter,
       slug: filename.split(".")[0],
