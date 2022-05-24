@@ -1,36 +1,33 @@
 import type { NextPage } from "next";
+import { useState, useEffect } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { getPostBySlug, getAllPostPaths } from "../../lib";
 import Container from "components/Layout/Container";
 interface Props {
   frontMatter: PostMetaType;
   content: string;
-  slug: string;
   mdxSource: MDXRemoteSerializeResult;
 }
 
-const PostBySlug: NextPage<Props> = ({
-  frontMatter,
-  content,
-  slug,
-  mdxSource,
-}) => {
-  console.log(mdxSource);
+const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
+  const [source, setSource] = useState(mdxSource);
+  useEffect(() => {
+    setSource(mdxSource);
+  }, []);
   return (
     <Container>
-      <h1>{slug}</h1>
-      <MDXRemote {...mdxSource} />
+      <h1>{frontMatter.title}</h1>
+      <MDXRemote {...source} />
     </Container>
   );
 };
 
 export const getStaticProps = async ({ params }: PostParams) => {
-  const { frontMatter, content, slug, mdxSource } = getPostBySlug(params.slug);
+  const { frontMatter, content, mdxSource } = await getPostBySlug(params.slug);
   return {
     props: {
       frontMatter,
       content,
-      slug,
       mdxSource,
     },
   };

@@ -5,9 +5,7 @@ import Navbar from "components/Layout/Navbar";
 export default function Document() {
   return (
     <Html>
-      <Head>
-        <title>{"Kimball's Tech Blog"}</title>
-      </Head>
+      <Head></Head>
       <body>
         <Header />
         <Navbar />
