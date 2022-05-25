@@ -1,11 +1,7 @@
 import type { NextPage } from "next";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 interface Props {
@@ -13,18 +9,21 @@ interface Props {
 }
 
 const PostCard: NextPage<Props> = ({ post }) => {
-  console.log(post);
   return (
     <Card
       sx={{
-        minWidth: 400,
-        width: 400,
-        height: 300,
+        width: "95%",
+        height: 250,
+        margin: 3,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+        paddingX: 4,
       }}
     >
-      <CardContent>
-        <Typography>{post.frontMatter.title}</Typography>
-      </CardContent>
+      <Typography variant="h3">{post.frontMatter.title}</Typography>
+      <Typography>{post.frontMatter.description}</Typography>
+      <Typography>{post.frontMatter.date}</Typography>
     </Card>
   );
 };

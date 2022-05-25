@@ -44,3 +44,19 @@ export const getPostBySlug = async (slug: string) => {
   const mdxSource = await serialize(content);
   return { mdxSource, frontMatter, content };
 };
+
+export const getPostByTag = async (slug: string) => {
+  const postsByCategory = getAllPosts().filter(({ frontMatter }) =>
+    frontMatter.tags.includes(slug)
+  );
+
+  return postsByCategory;
+};
+
+export const getAllPostPathsByTag = () => {
+  const tags = getAllPosts()
+    .map(({ frontMatter }) => [...frontMatter.tags])
+    .flat();
+  const paths = tags.map((tag) => ({ params: { slug: tag } }));
+  return paths;
+};

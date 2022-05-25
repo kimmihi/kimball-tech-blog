@@ -11,17 +11,15 @@ interface Props {
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <>
-      <Grid container spacing={2}>
-        {posts?.map((post) => {
-          return (
-            <Grid item xs={4} key={post.slug}>
-              <PostCard post={post} />
-            </Grid>
-          );
-        })}
-      </Grid>
-    </>
+    <Box
+      sx={{
+        padding: 2,
+      }}
+    >
+      {posts?.map((post) => {
+        return <PostCard post={post} key={post.slug} />;
+      })}
+    </Box>
   );
 };
 
