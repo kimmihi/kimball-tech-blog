@@ -11,14 +11,16 @@ interface Props {
 
 const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
   const [source, setSource] = useState(mdxSource);
+
   useEffect(() => {
     setSource(mdxSource);
   }, []);
+
   return (
-    <Container>
+    <>
       <h1>{frontMatter.title}</h1>
       <MDXRemote {...source} />
-    </Container>
+    </>
   );
 };
 

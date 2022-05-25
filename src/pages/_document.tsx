@@ -5,10 +5,10 @@ import Navbar from "components/Layout/Navbar";
 export default function Document() {
   return (
     <Html>
-      <Head></Head>
+      <Head>
+        <link rel="icon" href="/public/favicon.ico" />
+      </Head>
       <body>
-        <Header />
-        <Navbar />
         <Main />
         <NextScript />
       </body>

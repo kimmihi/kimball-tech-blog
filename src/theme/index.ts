@@ -1,3 +1,3 @@
 export const colors = {
-  main: "#003cb3",
+  dark: "#121828",
 };

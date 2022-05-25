@@ -11,12 +11,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <Container
-      sx={{
-        padding: 5,
-        minWidth: "1200px",
-      }}
-    >
+    <>
       <Grid container spacing={2}>
         {posts?.map((post) => {
           return (
@@ -26,7 +21,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           );
         })}
       </Grid>
-    </Container>
+    </>
   );
 };
 
