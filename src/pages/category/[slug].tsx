@@ -9,7 +9,6 @@ interface Props {
 }
 
 const PostListByCategory: NextPage<Props> = ({ posts }) => {
-  console.log(posts);
   return (
     <Box
       sx={{

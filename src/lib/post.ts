@@ -5,7 +5,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import remarkToc from "remark-toc";
 
-const POST_PATH = "src/public/posts";
+const POST_PATH = "public/posts";
 
 export const getAllPosts = () => {
   const files = fs.readdirSync(path.join(POST_PATH));

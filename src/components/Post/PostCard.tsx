@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -16,14 +17,29 @@ const PostCard: NextPage<Props> = ({ post }) => {
         height: 250,
         margin: 3,
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
+
+        justifyContent: "space-between",
         paddingX: 4,
       }}
     >
-      <Typography variant="h3">{post.frontMatter.title}</Typography>
-      <Typography>{post.frontMatter.description}</Typography>
-      <Typography>{post.frontMatter.date}</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+        }}
+      >
+        <Typography variant="h3">{post.frontMatter.title}</Typography>
+        <Typography>{post.frontMatter.description}</Typography>
+        <Typography>{post.frontMatter.date}</Typography>
+      </Box>
+      <Box>
+        {post.frontMatter.thumbnailUrl ? (
+          <Image src={post.frontMatter.thumbnailUrl} width="200" height="200" />
+        ) : (
+          <></>
+        )}
+      </Box>
     </Card>
   );
 };
