@@ -6,7 +6,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import { TAGS } from "config";
-import { colors } from "theme";
 import type { TagsKey } from "types/nav";
 
 const NavItem: NextPage = () => {

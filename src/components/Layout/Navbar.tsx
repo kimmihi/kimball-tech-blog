@@ -36,7 +36,7 @@ const Navbar: NextPage = () => {
         </a>
       </Link>
       <NavItem />
-      <Box>github</Box>
+      <Box></Box>
     </Box>
   );
 };
