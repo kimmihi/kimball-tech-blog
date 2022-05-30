@@ -8,7 +8,8 @@ COPY yarn.lock ./
 RUN yarn install
 
 COPY ./ ./
-RUN yarn build
+RUN yarn build && yarn dev
+
 
 FROM nginx:latest
 
