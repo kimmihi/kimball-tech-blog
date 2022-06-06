@@ -31,7 +31,7 @@ const Navbar: NextPage = () => {
               fontSize: "24px",
             }}
           >
-            {"Kimball's"}
+            {"Kim"}
           </Typography>
         </a>
       </Link>
