@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Container from "components/Layout/Container";
 import PostCard from "components/Post/PostCard";
 import { getAllPosts } from "lib";
 
@@ -17,7 +16,11 @@ const Home: NextPage<Props> = ({ posts }) => {
       }}
     >
       {posts?.map((post) => {
-        return <PostCard post={post} key={post.slug} />;
+        return (
+          <Link key={post.slug} href={`/posts/${post.slug}`}>
+            <PostCard post={post} />
+          </Link>
+        );
       })}
     </Box>
   );

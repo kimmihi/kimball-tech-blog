@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { getPostBySlug, getAllPostPaths } from "../../lib";
-import Container from "components/Layout/Container";
+
 interface Props {
   frontMatter: PostMetaType;
   content: string;
@@ -17,10 +20,24 @@ const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
   }, []);
 
   return (
-    <>
-      <h1>{frontMatter.title}</h1>
+    <Box
+      sx={{
+        padding: 5,
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h2">{frontMatter.title}</Typography>
+        <Typography variant="h6">{frontMatter.date}</Typography>
+      </Box>
+      <Divider sx={{ paddingY: 1 }} />
       <MDXRemote {...source} />
-    </>
+    </Box>
   );
 };
 

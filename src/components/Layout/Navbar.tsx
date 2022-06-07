@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import NavItem from "./NavItem";
-import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "config";
+import { NAV_BAR_WIDTH } from "config";
 import { colors } from "theme";
 
 const Navbar: NextPage = () => {
@@ -31,7 +31,7 @@ const Navbar: NextPage = () => {
               fontSize: "24px",
             }}
           >
-            {"Kim"}
+            {"Kimball's Blog"}
           </Typography>
         </a>
       </Link>

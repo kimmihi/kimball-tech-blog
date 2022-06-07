@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 interface Props {
@@ -29,7 +29,11 @@ const PostCard: NextPage<Props> = ({ post }) => {
           justifyContent: "space-around",
         }}
       >
-        <Typography variant="h3">{post.frontMatter.title}</Typography>
+        <Link href={`/posts/${post.slug}`}>
+          <Typography variant="h3" sx={{ cursor: "pointer" }}>
+            {post.frontMatter.title}
+          </Typography>
+        </Link>
         <Typography>{post.frontMatter.description}</Typography>
         <Typography>{post.frontMatter.date}</Typography>
       </Box>
