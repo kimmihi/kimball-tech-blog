@@ -4,6 +4,7 @@ export type TagsKey =
   | "Typescript"
   | "React"
   | "Next"
+  | "Tools"
   | "Essay";
 
 interface Tags {

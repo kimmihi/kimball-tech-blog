@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { FC } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { TAGS } from "config";
 import type { TagsKey } from "types/nav";
 
-const NavItem: NextPage = () => {
+const NavItem: FC = () => {
   const router = useRouter();
   const itemTitles = Object.keys(TAGS);
   const [curPath, setCurPath] = useState<string>("");

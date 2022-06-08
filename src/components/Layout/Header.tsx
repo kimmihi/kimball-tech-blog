@@ -1,11 +1,11 @@
-import type { NextPage } from "next";
+import type { FC } from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 
 import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "config";
 import { colors } from "theme";
 
-const Header: NextPage = () => {
+const Header: FC = () => {
   return (
     <Box
       sx={{

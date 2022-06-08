@@ -6,5 +6,6 @@ export const TAGS: Record<TagsKey, string> = {
   Typescript: "typescript",
   React: "react",
   Next: "next-js",
+  Tools: "tools",
   Essay: "essay",
 };

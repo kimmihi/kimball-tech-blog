@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { FC } from "react";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -7,7 +7,7 @@ import NavItem from "./NavItem";
 import { NAV_BAR_WIDTH } from "config";
 import { colors } from "theme";
 
-const Navbar: NextPage = () => {
+const Navbar: FC = () => {
   return (
     <Box
       sx={{
@@ -31,7 +31,7 @@ const Navbar: NextPage = () => {
               fontSize: "24px",
             }}
           >
-            {"Kimball's Blog"}
+            {"min.dev"}
           </Typography>
         </a>
       </Link>
