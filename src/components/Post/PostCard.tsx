@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
+import { colors } from "theme";
 interface Props {
   post: PostType;
 }
@@ -27,6 +28,7 @@ const PostCard: NextPage<Props> = ({ post }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
+          color: colors.dark,
         }}
       >
         <Link href={`/posts/${post.slug}`}>

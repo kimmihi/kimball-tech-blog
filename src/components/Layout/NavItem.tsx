@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import { TAGS } from "config";
 import type { TagsKey } from "types/nav";
+import { TAGS } from "config";
+import { colors } from "theme";
 
 const NavItem: FC = () => {
   const router = useRouter();
@@ -33,9 +34,11 @@ const NavItem: FC = () => {
               <Typography
                 sx={{
                   color:
-                    curPath === TAGS[title as TagsKey] ? "#b366ff" : "#f2f2f2",
+                    curPath === TAGS[title as TagsKey]
+                      ? colors.purple
+                      : "#f2f2f2",
                   fontSize: "20px",
-                  "&:hover": { color: "#b366ff" },
+                  "&:hover": { color: colors.purple },
                 }}
               >
                 {title}
