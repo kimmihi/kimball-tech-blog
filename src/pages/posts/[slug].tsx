@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { MDXProvider } from "@mdx-js/react";
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -36,7 +37,9 @@ const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
         <Typography variant="h6">{frontMatter.date}</Typography>
       </Box>
       <Divider sx={{ paddingY: 1 }} />
-      <MDXRemote {...source} />
+      <MDXProvider>
+        <MDXRemote {...source} />
+      </MDXProvider>
     </Box>
   );
 };
