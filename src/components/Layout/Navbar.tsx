@@ -4,8 +4,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import NavItem from "./NavItem";
-import { NAV_BAR_WIDTH } from "config";
-import { colors } from "theme";
+import { NAV_BAR_WIDTH } from "src/config";
+import { colors } from "src/theme";
 
 const Navbar: FC = () => {
   return (

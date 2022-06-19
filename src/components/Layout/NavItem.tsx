@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import type { TagsKey } from "types/nav";
-import { TAGS } from "config";
-import { colors } from "theme";
+import type { TagsKey } from "src/types/nav";
+import { TAGS } from "src/config";
+import { colors } from "src/theme";
 
 const NavItem: FC = () => {
   const router = useRouter();

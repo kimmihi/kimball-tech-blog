@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
-import { colors } from "theme";
+import { colors } from "src/theme";
 interface Props {
   post: PostType;
 }

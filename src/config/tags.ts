@@ -1,4 +1,4 @@
-import type { TagsKey } from "types/nav";
+import type { TagsKey } from "src/types/nav";
 
 export const TAGS: Record<TagsKey, string> = {
   Web: "web",

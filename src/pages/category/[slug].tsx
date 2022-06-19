@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Box from "@mui/material/Box";
 
-import PostCard from "components/Post/PostCard";
-import { getPostByTag, getAllPostPathsByTag } from "lib";
+import PostCard from "src/components/Post/PostCard";
+import { getPostByTag, getAllPostPathsByTag } from "src/lib";
 
 interface Props {
   posts: PostType[];

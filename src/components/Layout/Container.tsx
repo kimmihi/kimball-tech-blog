@@ -3,7 +3,7 @@ import type { SxProps } from "@mui/material";
 import React from "react";
 import Box from "@mui/material/Box";
 
-import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "config";
+import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "src/config";
 
 interface ContainerProps {
   sx?: SxProps;

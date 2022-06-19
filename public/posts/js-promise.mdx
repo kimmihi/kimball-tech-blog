@@ -25,22 +25,21 @@ Client 측에서 Server에 필요한 데이터를 요청하고, 응답받은 결
 
 아래의 코드는 순서대로 실행되기 때문에 동기적으로 동작한다고 할 수 있다. 함수를 호출한 순서대로 함수가 실행이되고 있다.
 
-```javascript
-function foo() {
-  console.log("foo");
+<CodeBlock className="javascript" code='function foo() {
+console.log("foo");
 }
 
 function bar() {
-  console.log("bar");
+console.log("bar");
 }
 
 foo();
-bar();
-```
+bar();' />
+
 
 아래의 코드도 위의 코드처럼 함수 호출을 동일하게 했지만 결과는 다르게 나온다. `foo` 함수의 경우 1초 뒤에 문자열을 출력하도록 되어있는데, 해당 로직이 끝난 후에 `bar` 함수가 실행될 것 같다. 하지만 `foo` 함수를 기다리지 않고 `bar` 함수가 실행된다.
 
-```javascript
+<CodeBlock className="javascript" code='
 function foo() {
   setTimeout(() => {
     console.log("foo");
@@ -53,6 +52,6 @@ function bar() {
 
 foo();
 bar();
-```
+'/>
 
 위의 코드처럼 순서대로 실행되지 않는 것을 비동기적으로 동작한다고 하며, `foo` 함수와 같이 비동기 로직이 포함된 함수를 비동기 함수라고 한다.

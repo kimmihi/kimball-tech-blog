@@ -2,8 +2,8 @@ import type { FC } from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 
-import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "config";
-import { colors } from "theme";
+import { TOP_BAR_HEIGHT, NAV_BAR_WIDTH } from "src/config";
+import { colors } from "src/theme";
 
 const Header: FC = () => {
   return (
