@@ -38,7 +38,7 @@ const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
       </Box>
       <Divider sx={{ paddingY: 1 }} />
       <MDXProvider>
-        <MDXRemote {...source} />
+        <MDXRemote {...source} components={{ Divider }} />
       </MDXProvider>
     </Box>
   );
