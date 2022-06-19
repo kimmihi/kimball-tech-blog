@@ -7,6 +7,7 @@ import Divider from "@mui/material/Divider";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { getPostBySlug, getAllPostPaths } from "../../lib";
 import CodeBlock from "src/components/mdx/code-block";
+import Strong from "src/components/mdx/strong";
 
 interface Props {
   frontMatter: PostMetaType;
@@ -24,7 +25,7 @@ const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
   return (
     <Box
       sx={{
-        padding: 5,
+        padding: "24px 120px",
       }}
     >
       <Box
@@ -39,7 +40,7 @@ const PostBySlug: NextPage<Props> = ({ frontMatter, content, mdxSource }) => {
       </Box>
       <Divider sx={{ paddingY: 1 }} />
       <MDXProvider>
-        <MDXRemote {...source} components={{ Divider, CodeBlock }} />
+        <MDXRemote {...source} components={{ Divider, CodeBlock, Strong }} />
       </MDXProvider>
     </Box>
   );
